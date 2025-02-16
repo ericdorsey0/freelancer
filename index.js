@@ -11,7 +11,7 @@ const OCCUPATIONS = ["Writer", "Teacher", "Programmer", "Designer", "Engineer"];
 const PRICE_RANGE = { min: 20, max: 200 };
 const NUM_FREELANCERS = 100;
 
-const Freelancer = Array.from({ length: NUM_FREELANCERS }, makeFreelancer);
+const freelancer = Array.from({ length: NUM_FREELANCERS }, makeFreelancer);
 const averageRate = getavrageRate();
 
 function makeFreelancer() {
@@ -24,4 +24,20 @@ function makeFreelancer() {
   return { name, occupation, rate };
 }
 
-function getAvrageRate() {}
+function getAvrageRate() {
+  const total = freelancer.reduce(
+    (total, freelancer) => total + freelancer.rate,
+    0
+  );
+  return total / freelancer.length;
+}
+
+function FreelancerRow({ name, occupation, rate }) {
+  const $tr = document.createElement("tr");
+  $tr.innerHTML = `
+    <td>${name}</td>
+    <td>${occupation}</td>
+    <td>${rate}</td>
+    `;
+  return $tr;
+}
