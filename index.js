@@ -69,9 +69,9 @@ function render() {
     <table>
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Occupation</th>
-          <th>Rate</th>
+          <th>NAME</th>
+          <th>OCCUPATTION</th>
+          <th>RATE</th>
         </tr>
       </thead>
       <tbody id="FreelancerRows"></tbody>
